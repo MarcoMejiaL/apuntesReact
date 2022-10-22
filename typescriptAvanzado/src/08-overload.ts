@@ -1,0 +1,16 @@
+/* string  => [s,t,r,i,n,g] */
+
+
+function parseString (input:string|string[]):string|string[]{
+    if(Array.isArray(input)){
+        return input.join('');//string
+    }else{
+        return input.split('')//string[]
+    }
+
+}
+
+const rtaArray = parseString('marco');
+console.log('array',rtaArray);
+const rtaSrt = parseString(['m','a','r','c','o'])
+console.log('string',rtaSrt);
