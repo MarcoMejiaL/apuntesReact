@@ -1,9 +1,9 @@
-/* const withoutend =()=>{
+ const withoutend =()=>{
     while(true){
         console.log('taquitos');
     }
 }
- */
+ 
 /* una funcion que nunca termina o que se ciclo  */
 
 
