@@ -1,7 +1,7 @@
 export class MyDate{ 
     constructor(
        public year:number,
-       public month:number,       
+       private _month:number,       
        private _day:number,
        ){}
 
@@ -22,7 +22,7 @@ export class MyDate{
             this._day +=amount
         }
         if(type === 'months'){
-            this.month +=amount
+            this._month +=amount
         }
         if(type === 'years'){
             this.year +=amount
@@ -37,13 +37,22 @@ export class MyDate{
         if (this.year % 100 === 0) return false;
         return this.year % 4===0;
     }
+    get month(){
+        return this._month
+    }
+
+    set month(newValue:number){
+        if(newValue >=1 && newValue <=12){
+        this._month = newValue
+    }else{
+        throw new Error('mes fuera de rango')
+    }
+    }
 }
 const myDate = new MyDate(2022,2,1);
 myDate.add(3,'years')
 console.log(myDate.printFormat());
 /* console.log(myDate.getDay()); */
 console.log(myDate.day);
-const myDate2= new MyDate(2003,1,1);
-console.log(myDate2.printFormat());
-console.log(myDate2.isLeapYear)
+
 
